@@ -11,16 +11,26 @@ var question1 = {
 var question2 = {
     quote: "Some things you see with your eyes, others you see with your heart",
     choices: ["Fievel", "The Land Before Time", "The black Cauldron", "The Sword in the Stone"],
+    answer: 1
+};
+
+var question3 = {
+    quote: "My name is Maximus Decimus Meridius",
+    choices: ["Rome", "The Santa Clause", "Gladiator"],
     answer: 2
 };
 
 allQuestions.push(question1);
 allQuestions.push(question2);
+allQuestions.push(question3);
 
+//dynamically add quote to the page
 $(document).ready(function() {
-    $('.quote').append(allQuestions[0].quote);
+        $('.quote').append(allQuestions[currentQuestion].quote);
 });
-//dynamically add questions to the page
+
+
+//dynamically add choices to the page
 $(document).ready(function() {
 //Loop through the AllQuestions object
     for (i = 0; i < allQuestions[currentQuestion].choices.length; i++){
@@ -45,14 +55,19 @@ $(document).ready(function() {
         };
 //remove old content
         $('.choices').empty();
+        $('.quote').empty();
 //advance question
         currentQuestion += 1;
-//redraw new question
-        for (i = 0; i < allQuestions[1].choices.length; i++){
-            $('.choices').append("<input type='radio' id=" + i + " value=" + i + ">" + allQuestions[1].choices[i] + "<br/>");
+//redraw new choices
+    for (i = 0; i < allQuestions[currentQuestion].choices.length; i++){
+        $('.choices').append("<input type='radio' name='movies' value=" + i + ">" + allQuestions[currentQuestion].choices[i] + "<br/>");
         };
+//redraw new quote
+        $('.quote').append(allQuestions[currentQuestion].quote);
 });
 });
+
+
 
 
 

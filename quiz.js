@@ -47,6 +47,8 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('.newnext').click(function(){
 //increase and rewrite score if answer is correct
+
+		if (!isNaN(Number($('input[name=movies]:checked', '#movies').val()))){
          var answer = Number($('input[name=movies]:checked', '#movies').val());
         if (answer === allQuestions[currentQuestion].answer){
             correctAnswers += 1;
@@ -64,6 +66,10 @@ $(document).ready(function() {
         };
 //redraw new quote
         $('.quote').append(allQuestions[currentQuestion].quote);
+		}
+		else {
+            $('.notify').append("need to answer");
+			}
 });
 });
 

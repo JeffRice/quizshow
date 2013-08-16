@@ -1,0 +1,26 @@
+[
+        {
+            "quote": "Some men just want to watch the world burn.",
+            "choices": [
+                "The Dark Knight",
+                "The Dark Knight Rises",
+                "Batman Begins",
+                "Batman Returns"
+            ],
+            "answer": 0,
+            "gotRight": "false"
+        },
+        {
+            "quote": "Some things you see with your eyes, others you see with your heart.",
+            "choices": [
+                "Fievel",
+                "The Land Before Time",
+                "The black Cauldron",
+                "The Sword in the Stone"
+            ],
+            "answer": 1,
+            "gotRight": "false"
+        }
+]
+
+
